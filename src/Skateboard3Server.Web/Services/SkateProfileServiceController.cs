@@ -101,4 +101,12 @@ public class SkateProfileServiceController : ControllerBase
     {
         return new IntegerContainer(0);
     }
+
+    [HttpPost("Infect")]
+    [Consumes("application/x-www-form-urlencoded")]
+    [Produces("text/xml")]
+    public BoolContainer Infect([FromForm] Infect data)
+    {
+        return new BoolContainer(false); // Not sure if it should be true or false
+    }
 }

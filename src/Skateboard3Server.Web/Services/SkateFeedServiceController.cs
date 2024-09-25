@@ -12,8 +12,16 @@ public class SkateFeedServiceController : ControllerBase
     [Consumes("application/x-www-form-urlencoded")]
     [Produces("text/xml")]
     public IntegerContainer PlayerSignedIntoEaNation([FromForm] PlayerSignedIntoEaNation data)
-    {
+    {  
         return new IntegerContainer(0); //TODO: do this for real
 
+    }
+
+    [HttpPost("PlayerStartedOnlineFreeskate2")]
+    [Consumes("application/x-www-form-urlencoded")]
+    [Produces("text/xml")]
+    public IntegerContainer PlayerStartedOnlineFreeskate2([FromForm] PlayerStartedOnlineFreeskate2 data)
+    {
+        return new IntegerContainer(0);
     }
 }
