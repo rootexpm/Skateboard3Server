@@ -5,6 +5,6 @@ public class PlayerStartedOnlineFreeskate2
 {
     public PlatformType PlatformId { get; set; }
     public uint UserId { get; set; }
-    public string ChallengeName { get; set; } = string.Empty;
+    public string? ChallengeName { get; set; }
     public bool IsHost { get; set; }
 }

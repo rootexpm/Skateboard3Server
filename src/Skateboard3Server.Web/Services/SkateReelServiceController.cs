@@ -114,6 +114,27 @@ public class SkateReelServiceController : ControllerBase
         return new IntegerContainer(0); // /TODO: return the amount of files user has uploaded
     }
 
+    [HttpGet("GetBookmarkedContent")]
+    [Produces("text/xml")]
+    public ContentInfo GetBookmarkedContent([FromQuery] PlatformType PlatformId, int UserId, FileType TypeId)
+    {
+        return new ContentInfo();
+    }
+
+    [HttpGet("GetTeamContent2")]
+    [Produces("text/xml")]
+    public ContentInfo GetTeamContent2([FromQuery] PlatformType PlatformId, int UserId, FileType TypeId, int StartIndex, int EndIndex, int LocalUserId)
+    {
+        return new ContentInfo();
+    }
+
+    [HttpGet("GetTopN")]
+    [Produces("text/xml")]
+    public ContentInfo GetTopN([FromQuery] PlatformType PlatformId, int RankingId,FileType TypeId, int LocationId, int StartIndex, int EndIndex, string users, string tags)
+    {
+        return new ContentInfo();
+    }
+
     [HttpGet("GetFeaturedContent")]
     [Produces("text/xml")]
     public GetFeaturedContentResponse GetFeaturedContent([FromQuery] GetFeaturedContent data)
