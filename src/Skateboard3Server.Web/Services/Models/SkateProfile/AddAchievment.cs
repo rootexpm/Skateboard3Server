@@ -1,10 +1,9 @@
 ﻿using Skateboard3Server.Web.Services.Models.Common;
 
 namespace Skateboard3Server.Web.Services.Models.SkateProfile;
-
-public class SetUserAchievements
+public class AddAchievment
 {
     public PlatformType PlatformId { get; set; }
     public uint UserId { get; set; }
-    public string? AchievementIds { get; set; } // array: achievementIds: 1,9,15,20,24,29,37,38
+    public uint AchievmentId { get; set; }
 }

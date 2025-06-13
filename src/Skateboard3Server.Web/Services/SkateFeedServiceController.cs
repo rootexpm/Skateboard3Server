@@ -24,4 +24,12 @@ public class SkateFeedServiceController : ControllerBase
     {
         return new IntegerContainer(0);
     }
+
+    [HttpPost("PlayerStartedTeamLobby2")]
+    [Consumes("application/x-www-form-urlencoded")]
+    [Produces("text/xml")]
+    public IntegerContainer PlayerStartedTeamLobby2([FromForm] PlayerStartedTeamLobby2 data)
+    {
+        return new IntegerContainer(0);
+    }
 }

@@ -109,4 +109,31 @@ public class SkateProfileServiceController : ControllerBase
     {
         return new BoolContainer(false); // Not sure if it should be true or false
     }
+
+    [HttpGet("GetUserLogos")]
+    [Produces("text/xml")]
+    public GetUserLogosResponse GetUserLogos([FromQuery] GetUserLogos data)
+    {
+        // seems to just return the userId
+        return new GetUserLogosResponse
+        {
+            UserId = data.UserId
+        };
+    }
+
+    [HttpPost("UploadThumbnail")]
+    [Consumes("multipart/form-data")]
+    [Produces("text/xml")]
+    public LongContainer UploadThumbnail([FromForm] UploadThumbnail data)
+    {
+        return new LongContainer(0);
+    }
+
+    [HttpPost("AddAchievment")]
+    [Consumes("application/x-www-form-urlencoded")]
+    [Produces("text/xml")]
+    public IntegerContainer AddAchievment([FromForm] AddAchievment data)
+    {
+        return new IntegerContainer(0);
+    }
 }
