@@ -107,6 +107,13 @@ public class SkateReelServiceController : ControllerBase
         return new IntegerContainer(0); // TODO: this is the number of files the user uploaded
     }
 
+    [HttpGet("GetNumberOfFiles2")]
+    [Produces("text/xml")]
+    public IntegerContainer GetNumberOfFiles2([FromQuery] PlatformType PlatformId, uint UserId, FileType TypeId, uint LocalUserId)
+    {
+        return new IntegerContainer(0); // /TODO: return the amount of files user has uploaded
+    }
+
     [HttpGet("GetFeaturedContent")]
     [Produces("text/xml")]
     public GetFeaturedContentResponse GetFeaturedContent([FromQuery] GetFeaturedContent data)
@@ -136,14 +143,14 @@ public class SkateReelServiceController : ControllerBase
     }
 
     [HttpPost("AddBookmark")]
-    [Produces("text/html")]
+    [Produces("text/xml")]
     public IntegerContainer AddBookmark([FromForm] AddBookmark data)
     {
         return new IntegerContainer(1); // 1 is succcess, 2 is when you try to bookmark a file you already bookmarked, and i assume 0 is failure
     }
 
     [HttpPost("Vote")]
-    [Produces("text/html")]
+    [Produces("text/xml")]
     public VoteInfo Vote([FromForm] Vote data)
     {
         return new VoteInfo();
@@ -151,9 +158,9 @@ public class SkateReelServiceController : ControllerBase
 
     [HttpPost("Upload")]
     [Consumes("multipart/form-data")]
-    [Produces("text/html")]
+    [Produces("text/xml")]
     public LongContainer Upload([FromForm] Upload data)
     {
-        return new LongContainer(0); // TODO: return the file id
+        return new LongContainer(0); // TODO: return the file id when successful, -2 if file is already uploaded
     }
 }

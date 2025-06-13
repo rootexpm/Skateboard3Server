@@ -9,3 +9,10 @@ public enum PlatformType
     XBL2,
     PS3
 }
+
+public enum FileType
+{
+    VIDEO = 1,
+    PHOTO,
+    SKATEPARK = 13
+}

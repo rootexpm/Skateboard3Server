@@ -18,6 +18,14 @@ public class StartLoginProcessResponse
     public TeamInfo TeamInfo { get; set; }
 }
 
+[XmlRoot(ElementName = "logo")]
+public class Logo
+{
+    public int IteamId { get; set; }
+    public string Uri { get; set; }
+    public string RtexUri { get; set; } // seems to be same as uri
+}
+
 public class TeamInfo
 {
     [XmlElement(ElementName = "teamId")]
@@ -25,4 +33,9 @@ public class TeamInfo
 
     [XmlElement(ElementName = "numMembers")]
     public uint NumMembers { get; set; } //TODO: long correct type?
+
+    [XmlElement(ElementName = "teamName")]
+    public string? TeamName { get; set; }
+
+    Logo? logo { get; set; }
 }
