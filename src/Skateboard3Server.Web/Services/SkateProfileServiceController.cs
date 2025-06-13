@@ -136,4 +136,11 @@ public class SkateProfileServiceController : ControllerBase
     {
         return new IntegerContainer(0);
     }
+
+    [HttpGet("ShouldAwardCriticAchievement")]
+    [Produces("text/xml")]
+    public BoolContainer ShouldAwardCriticAchievement([FromQuery] ShouldAwardCriticAchievement data)
+    {
+        return new BoolContainer(false); // TODO: you need to rate a total of 5 skate parks, 5 films, and 5 photos to get this achievment
+    }
 }
