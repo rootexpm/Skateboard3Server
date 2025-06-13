@@ -143,4 +143,11 @@ public class SkateProfileServiceController : ControllerBase
     {
         return new BoolContainer(false); // TODO: you need to rate a total of 5 skate parks, 5 films, and 5 photos to get this achievment
     }
+
+    [HttpGet("ShouldAwardContributorAchievement")]
+    [Produces("text/xml")]
+    public BoolContainer ShouldAwardContributorAchievement([FromQuery] PlatformType PlatformId, uint UserId)
+    {
+        return new BoolContainer(false); // TODO: you need to Upload 5 Films and 5 Photos, and 3 skate.Parks to get this achievment
+    }
 }

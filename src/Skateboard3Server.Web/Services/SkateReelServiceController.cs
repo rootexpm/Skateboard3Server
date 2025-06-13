@@ -97,14 +97,14 @@ public class SkateReelServiceController : ControllerBase
     [Produces("text/xml")]
     public LongContainer GetSpaceUsed([FromQuery] GetSpaceUsed data)
     {
-        return new LongContainer(0); // TODO: find out what it should actually return
+        return new LongContainer(0); // TODO: find out what it should actually return (i think it returns 1 if the user has uploaded the max amount of photos/videos allowed)
     }
 
     [HttpGet("GetNumFilesForBrowser2")]
     [Produces("text/xml")]
     public IntegerContainer GetNumFilesForBrowser2([FromQuery] GetNumFilesForBrowser2 data)
     {
-        return new IntegerContainer(63); // TODO: find out what this is based off
+        return new IntegerContainer(0); // TODO: this is the number of files the user uploaded
     }
 
     [HttpGet("GetFeaturedContent")]
@@ -147,5 +147,13 @@ public class SkateReelServiceController : ControllerBase
     public VoteInfo Vote([FromForm] Vote data)
     {
         return new VoteInfo();
+    }
+
+    [HttpPost("Upload")]
+    [Consumes("multipart/form-data")]
+    [Produces("text/html")]
+    public LongContainer Upload([FromForm] Upload data)
+    {
+        return new LongContainer(0); // TODO: return the file id
     }
 }
