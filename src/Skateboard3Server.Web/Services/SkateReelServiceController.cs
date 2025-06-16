@@ -163,6 +163,13 @@ public class SkateReelServiceController : ControllerBase
         return new IntegerContainer(0); // TODO: just return the FLV file
     }
 
+    [HttpGet("GetContent2")]
+    [Produces("text/xml")]
+    public ContentInfo GetContent2([FromQuery] PlatformType PlatformId, uint UserId, FileType TypeId, uint LocalUserId)
+    {
+        return new ContentInfo();
+    }
+
     [HttpPost("AddBookmark")]
     [Produces("text/xml")]
     public IntegerContainer AddBookmark([FromForm] AddBookmark data)
