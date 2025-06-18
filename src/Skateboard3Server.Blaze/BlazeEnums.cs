@@ -83,7 +83,7 @@ public enum SkateStatsNotification : ushort
 
 public enum SocialCommand : ushort
 {
-    //TODO 0x1
+    RecentPlayerList = 0x1,
     FriendsList = 0x6
 }
 

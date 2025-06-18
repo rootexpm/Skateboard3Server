@@ -80,13 +80,44 @@ public class SkateProfileServiceController : ControllerBase
     [HttpPost("UploadAIProfile")]
     [Consumes("multipart/form-data")]
     [Produces("text/xml")]
-    public LongContainer UploadSchema([FromForm] UploadAiProfile data)
-    {
-        //TODO save AI profile?
-        return new LongContainer(2); //TODO no idea if this number is right
-    }
+    public async Task<LongContainer> UploadAIProfile([FromForm] UploadAiProfile data)
+	{
+		if (data.AiProfile != null)
+		{
+			using (var stream = new MemoryStream()) //hack
+			{
+				await data.AiProfile.CopyToAsync(stream);
+				await _blobStorage.PutObject("user-profile", $"{data.PlatformId}/{data.UserId}", stream.ToArray());
+			}
+			return new LongContainer(1); //TODO no idea if this number is right
+		}
+		return new LongContainer(0); //TODO no idea if this number is right
+	}
 
-    [HttpPost("SetUserDLC")]
+    [HttpGet("GetAIProfile")]
+	// [Consumes("application/x-www-form-urlencoded")]
+	// [Produces("application/octet-stream")]
+	public async Task<IActionResult> GetAIProfile(PlatformType platformId, uint userId)
+	{
+		var objectKey = $"{platformId}/{userId}";
+		if (!_blobStorage.ObjectExists("user-profile", objectKey))
+		{
+			return NotFound();
+		}
+
+		try
+		{
+			var bytes = await _blobStorage.GetObject("user-profile", objectKey);
+			return File(bytes, "application/octet-stream");
+		}
+		catch (Exception e)
+		{
+			Logger.Warn(e);
+			return NotFound();
+		}
+	}
+
+	[HttpPost("SetUserDLC")]
     [Consumes("application/x-www-form-urlencoded")]
     [Produces("text/xml")]
     public BoolContainer SetUserDlc([FromForm] SetUserDlc data)
