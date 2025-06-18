@@ -87,6 +87,11 @@ public enum SocialCommand : ushort
     FriendsList = 0x6
 }
 
+public enum SocialNotification : ushort
+{
+	FriendsList = 0x2,
+}
+
 public enum UserSessionCommand : ushort
 {
     HardwareFlags = 0x8,

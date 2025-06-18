@@ -356,3 +356,4 @@ MigrationBackup/
 
 # appsettings
 appsettings.Development.json
+src/Skateboard3Server.Host/appsettings.json
