@@ -6,5 +6,5 @@ namespace Skateboard3Server.Blaze.Handlers.Teams.Messages;
 [BlazeResponse(BlazeComponent.Teams, (ushort)TeamsCommand.TeamInvitations)]
 public record TeamInvitationsResponse : BlazeResponseMessage
 {
-    //Empty
+    //Empty (confirmed)
 }

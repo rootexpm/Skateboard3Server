@@ -11,5 +11,4 @@ public record GameStateChangeNotification : BlazeNotificationMessage
 
     [TdfField("GSTA")]
     public GameState GameState { get; set; }
-
 }

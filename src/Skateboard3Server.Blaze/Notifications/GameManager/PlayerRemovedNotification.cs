@@ -3,7 +3,7 @@ using Skateboard3Server.Blaze.Server;
 
 namespace Skateboard3Server.Blaze.Notifications.GameManager;
 
-[BlazeRequest(BlazeComponent.GameManager, (ushort)GameManagerNotification.PlayerRemoved)]
+[BlazeNotification(BlazeComponent.GameManager, (ushort)GameManagerNotification.PlayerRemoved)]
 public record PlayerRemovedNotification : BlazeNotificationMessage
 {
     [TdfField("CNTX")]
@@ -17,5 +17,4 @@ public record PlayerRemovedNotification : BlazeNotificationMessage
 
     [TdfField("REAS")]
     public PlayerRemoveReason Reason { get; set; }
-
 }

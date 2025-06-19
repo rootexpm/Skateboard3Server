@@ -13,6 +13,6 @@ namespace Skateboard3Server.Blaze.Handlers.Teams.Messages;
 public record TeamMembershipRequest : BlazeRequestMessage, IRequest<TeamMembershipResponse>
 {
     [TdfField("IDLT")]
-    public List<uint> Idlt { get; init; } //TODO
+    public List<uint> IDList { get; init; } //TODO (idList?)
 
 }

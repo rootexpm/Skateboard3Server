@@ -8,9 +8,9 @@ using System.Collections.Generic;
 
 namespace Skateboard3Server.Blaze.Notifications.UserSession;
 
-[BlazeNotification(BlazeComponent.Social, (ushort)SocialNotification.FriendsList)]
-public record FriendsListNotification : BlazeNotificationMessage
+[BlazeNotification(BlazeComponent.Social, (ushort)SocialNotification.RecentPlayerList)]
+public record RecentPlayerListNotification : BlazeNotificationMessage
 {
 	[TdfField("ALML")]
-	public List<ResponseList> UserList { get; set; } //user list?
+	public List<ResponseList>? UserList { get; set; } //user list?
 }

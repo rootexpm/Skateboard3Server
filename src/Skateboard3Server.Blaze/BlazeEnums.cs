@@ -68,7 +68,8 @@ public enum TeamsCommand : ushort
 {
     TeamMembership = 0xA8C,
     TeamInvitations = 0x640,
-    TeamMembers = 0x7D0
+    TeamMembers = 0x7D0,
+    TeamInvite = 0xB54 // TODO: ?? Name?
 }
 
 public enum SkateStatsCommand : ushort
@@ -89,7 +90,7 @@ public enum SocialCommand : ushort
 
 public enum SocialNotification : ushort
 {
-	FriendsList = 0x2,
+	RecentPlayerList = 0x2,
 }
 
 public enum UserSessionCommand : ushort
